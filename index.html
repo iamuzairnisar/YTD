@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThumbFetch - Premium YouTube Thumbnail Downloader</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+    <div class="bg-glow bg-glow-secondary"></div>
+
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">
+          <i class="ph-fill ph-youtube-logo"></i>
+          <span>ThumbFetch</span>
+        </a>
+        <div class="nav-links">
+          <a href="#how-it-works">How it works</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="hero">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Ultra Fast Extraction
+        </div>
+        <h1>
+          Extract <span class="text-gradient">YouTube</span> Thumbnails
+          instantly.
+        </h1>
+        <p>
+          Paste a YouTube URL below to instantly fetch and download the maximum
+          resolution thumbnail. No ads, no wait times, just premium quality.
+        </p>
+
+        <div class="search-container">
+          <div class="input-group">
+            <i class="ph ph-link input-icon"></i>
+            <input
+              type="text"
+              id="youtube-url"
+              placeholder="https://www.youtube.com/watch?v=..."
+              autocomplete="off"
+            />
+            <button id="fetch-btn" class="btn-primary">
+              <span>Extract</span>
+              <i class="ph-bold ph-arrow-right"></i>
+            </button>
+          </div>
+          <div class="error-msg" id="error-msg">
+            Please enter a valid YouTube URL.
+          </div>
+        </div>
+      </header>
+
+      <!-- Interactive Diagram Section -->
+      <section id="how-it-works" class="diagram-section">
+        <h2>How it works</h2>
+        <p class="section-sub">
+          Watch the magic happen as we securely process your request.
+        </p>
+
+        <div class="interactive-diagram">
+          <!-- Node 1: Input -->
+          <div class="diagram-node" id="node-input">
+            <div class="node-icon"><i class="ph ph-link"></i></div>
+            <div class="node-text">URL Input</div>
+            <div class="node-status">Waiting...</div>
+          </div>
+
+          <!-- Connection 1 -->
+          <div class="diagram-connection" id="conn-1">
+            <div class="line"></div>
+            <div class="packet"></div>
+          </div>
+
+          <!-- Node 2: Processing -->
+          <div class="diagram-node" id="node-process">
+            <div class="node-icon"><i class="ph ph-cpu"></i></div>
+            <div class="node-text">Extract ID</div>
+            <div class="node-status">Idle</div>
+          </div>
+
+          <!-- Connection 2 -->
+          <div class="diagram-connection" id="conn-2">
+            <div class="line"></div>
+            <div class="packet"></div>
+          </div>
+
+          <!-- Node 3: YouTube Server -->
+          <div class="diagram-node" id="node-server">
+            <div class="node-icon"><i class="ph ph-cloud-arrow-down"></i></div>
+            <div class="node-text">Fetch MaxRes</div>
+            <div class="node-status">Idle</div>
+          </div>
+
+          <!-- Connection 3 -->
+          <div class="diagram-connection" id="conn-3">
+            <div class="line"></div>
+            <div class="packet"></div>
+          </div>
+
+          <!-- Node 4: Output -->
+          <div class="diagram-node" id="node-output">
+            <div class="node-icon"><i class="ph ph-image"></i></div>
+            <div class="node-text">Ready</div>
+            <div class="node-status">Idle</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Section -->
+      <section class="result-section hidden" id="result-section">
+        <div class="result-card glass-panel">
+          <div class="image-container">
+            <img
+              id="thumbnail-img"
+              src=""
+              alt="Extracted Thumbnail"
+              crossorigin="anonymous"
+            />
+            <div class="image-overlay">
+              <div class="quality-badge">Max Resolution (1280x720)</div>
+            </div>
+          </div>
+          <div class="result-actions">
+            <div class="video-info">
+              <span class="label">Video ID:</span>
+              <span class="value" id="video-id-display">...</span>
+            </div>
+            <button id="download-btn" class="btn-primary">
+              <i class="ph-bold ph-download-simple"></i>
+              Download HD
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 ThumbFetch. Minimal Premium Design.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
